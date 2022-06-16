@@ -16,4 +16,12 @@ public class enemyShooters extends Actor
     {
         // Add your action code here.
     }
+    public void removeenemyShooters()
+    {
+        if (getY()==799)
+        {
+            getWorld().removeObject(this);
+        }
+    }
+    
 }

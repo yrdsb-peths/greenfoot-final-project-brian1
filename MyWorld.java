@@ -25,12 +25,17 @@ public class MyWorld extends World
         if(enemyShootersCount>59)
     {
         addfirstEnemy();
+        addsecondEnemy();
         enemyShootersCount = 0;
     }
     }
     public void addfirstEnemy()
     {
         addObject(new firstEnemy(), Greenfoot.getRandomNumber(600), 0);
+    }
+    public void addsecondEnemy()
+    {
+        addObject(new secondEnemy(), Greenfoot.getRandomNumber(600), 0);
     }
     
     /**
@@ -49,6 +54,5 @@ public class MyWorld extends World
         firstEnemy.setLocation(293,37);
         secondEnemy secondEnemy = new secondEnemy();
         addObject(secondEnemy,166,102);
-        removeObject(secondEnemy);
     }
 }

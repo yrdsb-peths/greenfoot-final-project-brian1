@@ -19,6 +19,7 @@ public class firstEnemy extends enemyShooters
     public void  act()
     {
         moveOPP();
+        removeenemyShooters();
     }
     public void moveOPP()
     {

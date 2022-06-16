@@ -19,6 +19,7 @@ public class Player extends Actor
     public void act()
     {
        moveControl();
+       fireBullet();
     }
     public void moveControl()
     {
@@ -29,6 +30,13 @@ public class Player extends Actor
         if(Greenfoot.isKeyDown("left"))
         {
             setLocation(getX()-8,getY());
+        }
+    }
+    public void fireBullet()
+    {
+        if (Greenfoot.isKeyDown("space"))
+        {
+            getWorld().addObject(new Bullet(),getX(), getY()-30);
         }
     }
 }
