@@ -1,12 +1,15 @@
 #Greenfoot project file
 class.MyWorld.image=space1.jpg
 class.Player.image=rocket.png
+dependency1.from=MyWorld
+dependency1.to=Player
+dependency1.type=UsesDependency
 editor.fx.0.height=739
 editor.fx.0.width=816
 editor.fx.0.x=360
 editor.fx.0.y=82
 height=1000
-package.numDependencies=0
+package.numDependencies=1
 package.numTargets=2
 project.charset=UTF-8
 publish.hasSource=false
