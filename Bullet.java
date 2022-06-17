@@ -18,20 +18,17 @@ public class Bullet extends Actor
         removeFromWorld();
         
     }
+    public void addScore()
+    {
+        
+    }
     public void bulletMove()
     {
         setLocation(getX(),getY() -5);
     }
     public void removeFromWorld ()
-    {
-    
-        Actor enemy = getOneIntersectingObject(enemyShooters.class);
-        if (enemy != null)
-        {
-            getWorld().removeObject(enemy);
-            getWorld().removeObject(this);
-        }
-        else if (getY()==0)
+    { 
+        if (getY()==0)
         {
             getWorld().removeObject(this);
         }

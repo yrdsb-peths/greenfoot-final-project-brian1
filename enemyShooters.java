@@ -14,7 +14,11 @@ public class enemyShooters extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        removeenemyShooters();
+    }
+    public void moveEnemy()
+    {
+        setLocation(getX(),getY()+3);
     }
     public void removeenemyShooters()
     {

@@ -19,7 +19,28 @@ public class firstEnemy extends enemyShooters
     public void  act()
     {
         moveOPP();
-        removeenemyShooters();
+        hitByBullet();
+    }
+    public void hitByBullet()
+    {
+        Actor bullet = getOneIntersectingObject(Bullet.class);
+        if (bullet != null)
+        {
+            getWorld().removeObject(bullet);
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            Counter counter = myWorld.getCounter();
+            counter.addScore();
+            getWorld().removeObject(this);
+        }
+        else if (getY()==799)
+        {
+            World world = getWorld();
+            MyWorld myWorld = (MyWorld)world;
+            HealthBar healthbar = myWorld.getHealthBar();
+            healthbar.loseHealth();
+            getWorld().removeObject(this);
+        }
     }
     public void moveOPP()
     {

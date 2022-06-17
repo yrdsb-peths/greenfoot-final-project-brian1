@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
- int enemyShootersCount = 0;
+    HealthBar healthbar = new HealthBar();
+    Counter counter = new Counter();
     /**
      * Constructor for objects of class MyWorld.
      * 
@@ -19,23 +20,32 @@ public class MyWorld extends World
         super(600, 800, 1); 
         prepare();
     }
-    public void act()
+    public Counter getCounter()
     {
-    enemyShootersCount++;
-        if(enemyShootersCount>59)
+        return counter;
+    }
+    public HealthBar getHealthBar()
+    {
+        return healthbar;
+    }
+    public void act()
     {
         addfirstEnemy();
         addsecondEnemy();
-        enemyShootersCount = 0;
-    }
     }
     public void addfirstEnemy()
     {
-        addObject(new firstEnemy(), Greenfoot.getRandomNumber(600), 0);
+        if (Greenfoot.getRandomNumber (120)<1)
+        {
+            addObject(new firstEnemy(), Greenfoot.getRandomNumber(600), 0);
+        }
     }
     public void addsecondEnemy()
     {
-        addObject(new secondEnemy(), Greenfoot.getRandomNumber(600), 0);
+        if (Greenfoot.getRandomNumber (120)<1)
+        {
+            addObject(new secondEnemy(), Greenfoot.getRandomNumber(600), 0);
+        }
     }
     
     /**
@@ -44,15 +54,11 @@ public class MyWorld extends World
      */
     private void prepare()
     {
+        addObject(counter, 100, 50);
+        addObject(healthbar, 250, 50);
         Player player = new Player();
-        addObject(player,284,760);
-        player.setLocation(300,759);
-        firstEnemy firstEnemy = new firstEnemy();
-        addObject(firstEnemy,273,50);
-        player.setLocation(297,678);
-        firstEnemy.setLocation(278,51);
-        firstEnemy.setLocation(293,37);
-        secondEnemy secondEnemy = new secondEnemy();
-        addObject(secondEnemy,166,102);
+        addObject(player,252,510);
+        player.setLocation(293,705);
+        player.setLocation(287,698);
     }
 }
