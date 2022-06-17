@@ -15,14 +15,14 @@ public class Bullet extends Actor
     public void act()
     {
         bulletMove();
-        removeFromWorld();
         explosion();
+        removeFromWorld();
     }
     public void explosion()
     {
         if(isTouching(enemyShooters.class))
         {
-            Greenfoot.playSound("Pew.wav");
+            Greenfoot.playSound("Boom.wav");
         }
     }
     public void addScore()
