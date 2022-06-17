@@ -25,6 +25,7 @@ public class enemyShooters extends Actor
         if (getY()==799)
         {
             getWorld().removeObject(this);
+            
         }
     }
     

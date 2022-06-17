@@ -55,10 +55,12 @@ public class Player extends Actor
         {
             getWorld().addObject(new Bullet(),getX(), getY()-30);
             canFire = false;
+            Greenfoot.playSound("Pew.wav");
         }
         else if (!Greenfoot.isKeyDown("space"))
         {
             canFire = true;
+        
         }
     }
 }
